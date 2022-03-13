@@ -1,16 +1,16 @@
 const express = require('express'); // express import
 const PORT = process.env.PORT || 3000;
-const app = express();
-const apiRoutes = require('./routes/apiRoutes');
-
-// middle ware 
+const app = express(); // an express object that will do all server/express methods
+const apiRoutes = require('./routes/apiRoutes.js');
+const htmlRoutes = require('./routes/htmlRoutes.js');
+// middle ware creates (a plugin to express some functionality)
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
-app.use('/api', apiRoutes); // prepends /api to all url routes
-
+// Connect routes from above imports
+app.use(apiRoutes);
+app.use(htmlRoutes);
 // app.listen is always last
 app.listen(PORT, () => {
-    console.log(gradient.instagram(`API server now on port ${PORT} || http://localhost:${PORT}`));
+    console.log(`API server now on port ${PORT} || http://localhost:${PORT}`);
 })

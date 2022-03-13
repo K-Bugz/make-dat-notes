@@ -23,8 +23,6 @@ You need a way to make notes! Here is the one stop shop!!!!
 ### Dependencies
 - [NPM](https://www.npmjs.com/)
 - [NodeJS](https://nodejs.org/)
-### Demo
-You can access a live video link version at (insert link here)
 
 ### Download Zip
 1. Go to the repo on (https://github.com/K-Bugz/make-dat-notes).
