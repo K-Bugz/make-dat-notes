@@ -1,8 +1,16 @@
-const express = require('express');
 const path = require('path');
 const router = express.Router();
 
-// need to path these requests to html page when landing on the app
-// get home page '/'
-// get notes page '/notes'
-// set wildcard with "*" if they try and search for anything relative 
+router.get('/', (req, res) => { // landing page
+    res.sendFile(path.join(__dirname, '../../public/index.html'));
+});
+
+router.get('/notes', (req, res) => { // /notes page
+    res.sendFile(path.join(__dirname, '../../public/notes.html'));
+});
+
+router.get('*', (req, res) => { // * is a catch for any other search. 
+    res.sendFile(path.join(__dirname, '../../public/index.html'));
+});
+
+module.exports = router;
