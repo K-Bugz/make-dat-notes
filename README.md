@@ -18,7 +18,7 @@
 ## Description
 You need a way to make notes! Here is the one stop shop!!!!
 
-![picture of an example team page](public/assets/images/rmIMG1.png)
+![picture of the app runnin up in the browser](public/assets/images/rmIMG1.png)
 
 ### Dependencies
 - [NPM](https://www.npmjs.com/)
