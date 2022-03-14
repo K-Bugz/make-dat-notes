@@ -1,39 +1,37 @@
-{
-    "notes": [
-        {
-            "id": "0",
-            "title": "1st note",
-            "text": "Complete HW11"
-        },
-        {
-            "id": "1",
-            "title": "2nd note",
-            "text": "Make chess app that practices express & Heroku deployment"
-        },
-        {
-            "id": "2",
-            "title": "3rd note",
-            "text": "Feed yourself"
-        },
-        {
-            "id": "3",
-            "title": "4th note",
-            "text": "Make sure family is happy, safe & fed"
-        },
-        {
-            "id": "4",
-            "title": "5th note",
-            "text": "Work on SQL work"
-        },
-        {
-            "id": "5",
-            "title": "6th note",
-            "text": "Work on HW12"
-        },
-        {
-            "id": "6",
-            "title": "7th note",
-            "text": "Complete HW12"
-        }
-    ]
-}
+[
+    {
+        "id": "0",
+        "title": "1st Note",
+        "text": "Complete HW11"
+    },
+    {
+        "id": "1",
+        "title": "2nd Note",
+        "text": "Make chess app that practices express & Heroku deployment"
+    },
+    {
+        "id": "2",
+        "title": "3rd Note",
+        "text": "Feed yourself"
+    },
+    {
+        "id": "3",
+        "title": "4th Note",
+        "text": "Make sure family is happy, safe & fed"
+    },
+    {
+        "id": "4",
+        "title": "5th Note",
+        "text": "Work on SQL work"
+    },
+    {
+        "id": "5",
+        "title": "6th Note",
+        "text": "Work on HW12"
+    },
+    {
+        "id": "6",
+        "title": "7th Note",
+        "text": "Complete HW12"
+    }
+]

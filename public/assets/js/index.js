@@ -5,18 +5,17 @@ let newNoteBtn;
 let noteList;
 
 if (window.location.pathname === '/notes') {
-  noteTitle = document.querySelector('.note-title');
-  noteText = document.querySelector('.note-textarea');
+  noteTitle = document.querySelector('.note-title'); // variable that holds title
+  noteText = document.querySelector('.note-textarea'); // variable that hold text content 
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
-  noteList = document.querySelectorAll('.list-container .list-group');
+  noteList = document.querySelectorAll('.list-container .list-group'); // variable of all the notes
 }
 
 // Show an element
 const show = (elem) => {
   elem.style.display = 'inline';
 };
-
 // Hide an element
 const hide = (elem) => {
   elem.style.display = 'none';
@@ -25,13 +24,14 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
-const getNotes = () => // how do I connect this to db/db.json
-  fetch('db/db.json', {
+const getNotes = () =>
+  fetch('/api/notes', { // fetch request to server.js
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  }).then(response => response.json())
+  ;
 
 const saveNote = (note) =>
   fetch('/api/notes', {
@@ -61,7 +61,17 @@ const renderActiveNote = () => {
   } else {
     noteTitle.removeAttribute('readonly');
     noteText.removeAttribute('readonly');
-    noteTitle.value = '';
+    const newNoteId = jsonNotes.length + 1;
+    const prefixID = parseInt(newNoteId.toString().slice(-1))
+    if (prefixID === 1) {
+      noteTitle.value = `${newNoteId}st Note`;
+    } else if (prefixID === 2) {
+      noteTitle.value = `${newNoteId}nd Note`;
+    } else if (prefixID === 3) {
+      noteTitle.value = `${newNoteId}rd Note`;
+    } else {
+      noteTitle.value = `${newNoteId}th Note`;
+    }
     noteText.value = '';
   }
 };
@@ -117,8 +127,7 @@ const handleRenderSaveBtn = () => {
 };
 
 // Render the list of note titles
-const renderNoteList = async (notes) => {
-  let jsonNotes = await notes.json();
+const renderNoteList = async (jsonNotes) => {
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -153,7 +162,7 @@ const renderNoteList = async (notes) => {
 
     return liEl;
   };
-
+  window.jsonNotes = jsonNotes
   if (jsonNotes.length === 0) {
     noteListItems.push(createLi('No saved Notes', false));
   }

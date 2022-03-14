@@ -8,7 +8,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 // Connect routes from above imports
-app.use(apiRoutes);
+app.use("/api", apiRoutes);
 app.use(htmlRoutes);
 // app.listen is always last
 app.listen(PORT, () => {
