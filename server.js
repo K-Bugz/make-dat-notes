@@ -1,5 +1,5 @@
 const express = require('express'); // express import
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express(); // an express object that will do all server/express methods
 const apiRoutes = require('./routes/apiRoutes.js');
 const htmlRoutes = require('./routes/htmlRoutes.js');
