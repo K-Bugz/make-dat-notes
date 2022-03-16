@@ -5,7 +5,6 @@
     "path": "^0.12.7"
   },
   "scripts": {
-    "_comment1": "devStart : nodemon server.js",
     "test": "jest",
     "start": "node server.js"
   },
