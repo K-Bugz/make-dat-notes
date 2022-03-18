@@ -24,7 +24,6 @@
   "bugs": {
     "url": "https://github.com/K-Bugz/make-dat-notes/issues"
   },
-  "homepage": "https://github.com/K-Bugz/make-dat-notes#readme",
   "devDependencies": {
     "nanoid": "^3.3.1"
   }
